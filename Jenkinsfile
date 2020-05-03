@@ -20,16 +20,21 @@
 			PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
 		}
 		stages{
-			stage('Build'){
+			stage('Checkout'){
 				steps{
 					echo "Build--echo"					
 					sh 'docker version'
-					echo "PATH -- $PATH"
 					sh 'mvn --version'
+					echo "PATH -- $PATH"
 					echo "BUILD_ID  --- $env.BUILD_ID"
 					echo "BUILD_NUMBER  --- $env.BUILD_NUMBER"
 					}
 				}
+			stage('Compile'){
+				steps{
+					sh "mvn clean compile"
+				}
+			}
 			stage('Test'){
 				steps{
 					echo "Test"
