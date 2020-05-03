@@ -17,7 +17,7 @@
 		stages{
 			stage('Build'){
 				steps{
-					cmd 'mvn --version'
+				//	cmd 'mvn --version'
 					echo "Build--echo"
 					echo "BUILD_ID  --- $env.BUILD_ID"
 					echo "BUILD_NUMBER  --- $env.BUILD_NUMBER"
