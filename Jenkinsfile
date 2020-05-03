@@ -17,7 +17,7 @@
 		environment{
 			dockerHome = tool 'My_Docker'
 			mavenHome = tool 'My_Maven'
-			PATH = "$dockerHome/bin:$mavenHome/bin:%PATH"
+			PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
 		}
 		stages{
 			stage('Build'){
