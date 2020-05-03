@@ -49,7 +49,7 @@
 				
 			stage('Build Docker image'){
 				steps{
-					//"docker build -t prabirdos/currency-exchange-devopps:$env.BUILD_TAG"
+					//"docker build -t prabirdos/currency-exchange-devopps:$env.BUILD_TAG" .
 					script{
 						dockerImage = docker.build("prabirdos/currency-exchange-devopps:${env.BUILD_TAG}")
 						}
