@@ -48,9 +48,11 @@
 				}
 				
 			stage('Build Docker image'){
-				//"docker build -t prabirdos/currency-exchange-devopps:$env.BUILD_TAG"
-				script{
-					dockerImage = docker.build("prabirdos/currency-exchange-devopps:${env.BUILD_TAG}")
+				steps{
+					//"docker build -t prabirdos/currency-exchange-devopps:$env.BUILD_TAG"
+					script{
+						dockerImage = docker.build("prabirdos/currency-exchange-devopps:${env.BUILD_TAG}")
+						}
 					}
 				}
 			stage('Push Docker image'){
