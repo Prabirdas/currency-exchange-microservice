@@ -19,8 +19,8 @@
 				steps{
 			//		sh 'mvn --version'
 					echo "Build--echo"
-					echo "BUILD_ID  --- $evn.BUILD_ID"
-					echo "BUILD_NUMBER  --- $evn.NUMBER"
+			//		echo "BUILD_ID  --- $evn.BUILD_ID"
+			//		echo "BUILD_NUMBER  --- $evn.NUMBER"
 					}
 				}
 			stage('Test'){
