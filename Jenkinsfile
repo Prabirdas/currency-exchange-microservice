@@ -13,7 +13,7 @@
 	
 	pipeline{
 		//agent any
-		agent ( docker {name 'maven:3.6.3'})
+		agent { docker {name 'maven:3.6.3'}}
 		stages{
 			stage('Build'){
 				steps{
