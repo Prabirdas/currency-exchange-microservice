@@ -28,6 +28,7 @@
 					echo "PATH -- $PATH"
 					echo "BUILD_ID  --- $env.BUILD_ID"
 					echo "BUILD_NUMBER  --- $env.BUILD_NUMBER"
+					echo "BUILD TAG  --- $env.BUILD_TAG"
 					}
 				}
 			stage('Compile'){
@@ -38,6 +39,28 @@
 			stage('Test'){
 				steps{
 					echo "Test"
+					}
+				}
+			stage('Package'){
+				steps{
+					sh "mvn package -DskipTests"
+					}
+				}
+				
+			stage('Build Docker image'){
+				//"docker build -t prabirdos/currency-exchange-devopps:$env.BUILD_TAG"
+				script{
+					dockerImage = docker.build("prabirdos/currency-exchange-devopps:${env.BUILD_TAG}")
+					}
+				}
+			stage('Push Docker image'){
+				steps{
+					script{
+						docker.withRegistry('','dockerHub'){
+							dockerImage.push();
+							dockerImage.push('latest');
+							}
+						}
 					}
 				}
 			}

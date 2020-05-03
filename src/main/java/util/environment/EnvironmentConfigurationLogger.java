@@ -1,3 +1,4 @@
+package util.environment;
 
 import java.util.Arrays;
 import java.util.stream.StreamSupport;
@@ -33,7 +34,7 @@ public class EnvironmentConfigurationLogger {
 					} else {
 						LOGGER.info("{} - {}", prop, "NON-STRING-VALUE");
 					}
-					
+
 				});
 		LOGGER.debug("===========================================");
 	}

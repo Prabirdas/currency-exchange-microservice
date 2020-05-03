@@ -1,3 +1,4 @@
+package resource;
 
 import java.math.BigDecimal;
 
@@ -18,7 +19,7 @@ public class ExchangeValue {
 	private String to;
 
 	private BigDecimal conversionMultiple;
-	
+
 	private String exchangeEnvironmentInfo;
 
 	public ExchangeValue() {
@@ -62,5 +63,5 @@ public class ExchangeValue {
 		return "ExchangeValue [id=" + id + ", from=" + from + ", to=" + to + ", conversionMultiple="
 				+ conversionMultiple + ", exchangeEnvironmentInfo=" + exchangeEnvironmentInfo + "]";
 	}
-	
+
 }
