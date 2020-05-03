@@ -1,6 +1,6 @@
 //Scripted
 
-/node {
+//node {
 //	stage('Build') {
 	//	echo "Build"
 	//}
