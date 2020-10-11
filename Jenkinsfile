@@ -17,7 +17,7 @@
 		//agent { docker { image 'node:13.8'}}
 		environment{
 		//	dockerHome = tool 'My_Docker'
-			mavenHome = tool 'myMaven'
+			mavenHome =  'myMaven'
 			//PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
 			PATH = "$mavenHome/bin:$PATH"
 		}
