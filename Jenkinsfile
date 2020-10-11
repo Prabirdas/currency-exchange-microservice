@@ -43,11 +43,11 @@
 					echo "Test"
 					}
 				}
-			stage('Integration Test')
+			stage('Integration Test'){
 				steps{
 					sh "mmvn failsafe:integration-test failsafe:verify"
 				}
-
+			}
 			stage('Package'){
 				steps{
 					sh "mvn package -DskipTests"
