@@ -43,12 +43,16 @@
 					echo "Test"
 					}
 				}
+			stage('Integration Test')
+				steps{
+					sh "mmvn failsafe:integration-test failsafe:verify"
+				}
+
 			stage('Package'){
 				steps{
 					sh "mvn package -DskipTests"
 					}
 				}
-				
 			stage('Build Docker image'){
 				steps{
 					//"docker build -t prabirdos/currency-exchange-devopps:$env.BUILD_TAG" .
@@ -60,7 +64,7 @@
 			stage('Push Docker image'){
 				steps{
 					script{
-						docker.withRegistry('','dockerHub'){
+						docker.withRegistry('','dockerhub'){
 							dockerImage.push();
 							dockerImage.push('latest');
 							}
